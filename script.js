@@ -6,15 +6,12 @@ class Workout {
   clicks = 0;
 
   constructor(coords, distance, duration) {
-    // this.date = ...
-    // this.id = ...
     this.coords = coords; // [lat, lng]
     this.distance = distance; // in km
     this.duration = duration; // in min
   }
 
   _setDescription() {
-    // prettier-ignore
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${
@@ -38,7 +35,6 @@ class Running extends Workout {
   }
 
   calcPace() {
-    // min/km
     this.pace = this.duration / this.distance;
     return this.pace;
   }
@@ -168,9 +164,6 @@ class App {
 
       // Check if data is valid
       if (
-        // !Number.isFinite(distance) ||
-        // !Number.isFinite(duration) ||
-        // !Number.isFinite(cadence)
         !validInputs(distance, duration, cadence) ||
         !allPositive(distance, duration, cadence)
       )
